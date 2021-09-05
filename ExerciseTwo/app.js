@@ -48,6 +48,7 @@ const highestNumberLangsDe = () => {
             if (value === 'de') {
                 deSpeakers.push(index);
             };
+
             deSpeakers.sort((a,b) => {
                 if (a.languages.length > b.languages.length) {
                     if (a.languages.length > mostLangsDe.languages.length) {
@@ -73,6 +74,7 @@ const allOfficialLangs = () => {
         index.languages.forEach((value) => {
             repeatedLangs.push(value);
         });
+
         allLangs = [...new Set(repeatedLangs)];
         numberOfLangs = Number(allLangs.length);
     });
@@ -92,12 +94,14 @@ const highestNumberLangs = () => {
                 mostLangsWorld = a; 
             };
         }; 
+
         if (a.languages.length < b.languages.length) {
             if (b.languages.length > mostLangsWorld.languages.length) {
                 mostLangsWorld = b; 
             };
         };
     });
+
     console.log(`The country that has more official languages is ${mostLangsWorld.country}`);
     return mostLangsWorld;
 };
@@ -105,6 +109,7 @@ const highestNumberLangs = () => {
 const mostCommonLang = arr => {
     const count = {};
     let res = [];
+    
     arr.forEach(el => {
        count[el] = (count[el] || 0) + 1;
     });
